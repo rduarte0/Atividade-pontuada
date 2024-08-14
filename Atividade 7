@@ -1,25 +1,32 @@
 programa {
   funcao inicio() {
-   //declarando variaveis
-    cadeia cor
-    inteiro verde, azul, amarelo, vermelho
+     //Declaração de variáveis.
 
-    verde = 10.00
-    azul = 20.00
-    amarelo = 30.00
-    vermelho = 40.00
+  cadeia descriscao
+  real preco_Unitario, total, total_a_pagar, quantidade, desconto
 
-   // pedindo os dados ao usuarios
-    escreva("Qual a cor do cd? ")
-    leia (cor)
-   //fazendo a comparaçao lógica
-    se (cor == "verde" )
-    escreva("O preço foi: $" + verde + "  reais")
-    se(cor == "azul")
-    escreva("O preço foi $" + azul + " reais")
-    se(cor == "amarelo")
-   escreva("O preço foi $" + amarelo + " reais")
-    se(cor == "vermelho")
-  escreva("O preço foi $" + vermelho + " reais")
+   //Solicitando dados
+
+  escreva("digite a descrição do produto: ")
+  leia(descriscao)
+  escreva("Digite a quantidade adquirida: ")
+  leia(quantidade)
+  escreva("Digite  o valor do produto: ")
+  leia(preco_Unitario)
+
+  total = (quantidade * preco_Unitario)
+  desconto = 0
+  se (quantidade <= 5){
+  desconto = total * 0.02}
+  senao se(quantidade > 5 e quantidade <= 10){
+  desconto = total * 0.03}
+  senao
+  {desconto = total * 0.05}
+
+  total_a_pagar = (total - desconto)
+
+  escreva("O total a pagar é: " + total_a_pagar)
+  escreva("\nO total é: ", + total)
+  escreva("\nOdesconto foi de: ", + desconto)
   }
 }
